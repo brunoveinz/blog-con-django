@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html'%}
+
+{% block content %}
+    <h1>Tareas</h1>
+
+    {% for tarea in tareas  %}
+        <h1>{% if tarea.done == False %}🕑{% else %}✅ {% endif %}
+            {{tarea.title}}</h1>
+        <p>{{tarea.description}}</p>
+        <p> Project: {{tarea.project}}</p>
+        <button>Delete</button>
+        <button>Done</button>
+    {% endfor %}
+{% endblock %}
